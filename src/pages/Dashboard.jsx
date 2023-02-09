@@ -6,9 +6,6 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { getAuth } from 'firebase/auth';
 import Header from "../components/Header";
 import {Container, Row, Col, Card, CardGroup, Image } from 'react-bootstrap';
-// import cafe1 from "../images/laxbw-prime-1715-hor-wide.webp";
-// import cafe2 from "../images/maras-restaurant-interior-1.jpg";
-// import cafe3 from "../images/La-Colombe-Restaurant_Andrea-van-der-Spuy_2018_La-Colombe-183.webp"
 
 const Home = () => {
   const auth = getAuth(firebaseApp)
@@ -26,8 +23,9 @@ const Home = () => {
   return (
       <div>
       <Header/>
-      <Container className=" mt-5 text-dark w-75 h-25 "> 
+      <Container className=" text-dark w-75 h-25 mt-5"> 
       <Row  >
+      <h1 className="text-center mb-3">Restoran List's</h1>
       <Col xs={12}> 
       <>
       {['Success','Primary','Danger'].map((variant) => (
@@ -39,15 +37,15 @@ const Home = () => {
         className="mb-2">
           <Image src={doc.data().image} alt="image" className="img-thumbnail w-75 m-auto mt-3"/>
           <Card.Body key={variant}>
-            <><Card.Title > <h2><u>{doc.data().cafe}</u></h2></Card.Title>
-            <h4>Owner : {doc.data().username}</h4>
+            <><Card.Title ><h2 className="text-center mb-3"><u>{doc.data().cafe}</u></h2></Card.Title>
+            <h5>Owner : {doc.data().username}</h5>
             <h6>Alamat : {doc.data().address}</h6>
             <h6>Kategori : {doc.data().category}</h6>
             <Card.Text>" {doc.data().description} "</Card.Text></>
           </Card.Body>
-          <Card.Footer>
+          {/* <Card.Footer>
             <small className="text-light">Last updated 3 mins ago</small>
-          </Card.Footer>
+          </Card.Footer> */}
         </Card>
         ))}
       </CardGroup>
@@ -97,7 +95,9 @@ const Home = () => {
           </Card.Footer>
         </Card>
       </CardGroup> */}
+   
       </Container>
+
       </div>
   );
 }

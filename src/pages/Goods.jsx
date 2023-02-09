@@ -7,7 +7,7 @@ const Goods = () => {
 
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
         <h1 className="m-5">Goods List :</h1>
     </div>
   )

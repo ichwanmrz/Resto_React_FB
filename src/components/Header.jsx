@@ -12,10 +12,10 @@ const Header = () => {
   const auth = getAuth(firebaseApp)
   const [user ] = useAuthState(auth)
   return (
-    <div>
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" >
-      <Container className="fs-5" >
-        <Navbar.Brand as={Link} to="/"><h3>Gomez</h3></Navbar.Brand>
+    <div className="">
+        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className="  mb-5">
+      <Container className="fs-5 ">
+        <Navbar.Brand as={Link} to="/"><h2 className="text-primary fw-bold me-3">goomer</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -34,15 +34,16 @@ const Header = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/About">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/about">About Us</Nav.Link>
+            {/* <Nav.Link as={Link} to="/profile">Profile</Nav.Link> */}
           </Nav>
           <Nav>
           {!user && <Nav.Link as={Link} to="/login">Enter</Nav.Link>}
-          {!user && <Nav.Link as={Link} to="/register" className="bg-primary rounded text-light ">
+          {!user && <Nav.Link as={Link} to="/profile" className="bg-primary rounded text-light px-3">
             Create Free Menu</Nav.Link>}
             {user && (
               <div className="d-flex">
-              <Nav.Link as={Link} to="/profile"><p className='text-dark mb-0'>
+              <Nav.Link as={Link} to="/profile"><p className='text-light'>
                 Halo, {user.displayName || user.email.split('@')[0]} !</p>
               </Nav.Link>
               <Nav.Link as={Link} to="/" onClick={() => signOut(auth)}>Logout</Nav.Link>

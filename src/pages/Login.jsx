@@ -30,7 +30,7 @@ const Login = () => {
 
   useEffect(() => {
       if(user || userGoogle !== undefined)
-      navigate('/dashboard', { replace: true });
+      navigate('/profile', { replace: true });
   }, [user, userGoogle, navigate])
 
   const loginHandler = () => {

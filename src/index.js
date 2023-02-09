@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 import Goods from './pages/Goods';
 import Price from './pages/Price';
 import About from './pages/About';
@@ -14,13 +15,16 @@ import Register from './pages/Register';
 import Auth from './components/Auth';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App/>}/>
+      {/* <Route path="/profile" element={<Profile/>} /> */}
       <Route element={<Auth />}>
+      <Route path="/profile" element={<Profile/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/goods" element={<Goods/>} />
       <Route path="/price" element={<Price/>} />
