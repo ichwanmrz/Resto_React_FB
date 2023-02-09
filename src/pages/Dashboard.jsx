@@ -39,6 +39,7 @@ const Home = () => {
           <Card.Body key={variant}>
             <><Card.Title ><h2 className="text-center mb-3"><u>{doc.data().cafe}</u></h2></Card.Title>
             <h5>Owner : {doc.data().username}</h5>
+            <h6>Pass : {doc.data().password}</h6>
             <h6>Alamat : {doc.data().address}</h6>
             <h6>Kategori : {doc.data().category}</h6>
             <Card.Text>" {doc.data().description} "</Card.Text></>
