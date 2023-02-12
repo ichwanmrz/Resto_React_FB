@@ -4,18 +4,16 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const Account = () => {
   return (
     <div>
-        <h1>My Profile</h1>
+        <h1 className='bg-secondary'>My Profile</h1>
         <ListGroup className='text-start mt-5'>
-            <pre> 
-            <ListGroup.Item variant="primary">Nama          :</ListGroup.Item>
-            <ListGroup.Item variant="secondary">Alamat      :</ListGroup.Item>
-            <ListGroup.Item variant="success">Tanggal Lahir :</ListGroup.Item>
-            <ListGroup.Item variant="danger">No.Telp/HP     :</ListGroup.Item>
-            <ListGroup.Item variant="warning">Membership    :</ListGroup.Item>
-            <ListGroup.Item variant="info">Reward & Bonus   :</ListGroup.Item>
-            <ListGroup.Item variant="light">Payment Methode :</ListGroup.Item>
-            <ListGroup.Item variant="dark">Delete Account   :</ListGroup.Item>
-            </pre>
+            <ListGroup.Item variant="dark"><pre>Nama           : Admin</pre></ListGroup.Item>
+            <ListGroup.Item variant="info"><pre>Domisili       : Jakarta</pre></ListGroup.Item>
+            <ListGroup.Item variant="dark"><pre>Email          : admin@app.com</pre></ListGroup.Item>
+            <ListGroup.Item variant="info"><pre>No.Telp/HP     : 06467xxxxxx</pre></ListGroup.Item>
+            <ListGroup.Item variant="dark"><pre>Membership     : Basic</pre></ListGroup.Item>
+            <ListGroup.Item variant="info"><pre>Reward & Bonus : 100 points</pre></ListGroup.Item>
+            <ListGroup.Item variant="dark"><pre>Payment Methode: Paypal</pre></ListGroup.Item>
+            <ListGroup.Item variant="info"><button className='btn btn-danger'>Delete Account</button></ListGroup.Item>
         </ListGroup>
     </div>
   )

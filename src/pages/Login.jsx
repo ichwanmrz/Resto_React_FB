@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-fireba
 import { getAuth } from "firebase/auth";
 import firebaseApp from "../config/firebaseConfig";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Form, Button, Row, Col, Alert, Container } from 'react-bootstrap'
 import { useNavigate, Link } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
@@ -42,7 +43,7 @@ const Login = () => {
   return (
     <div>
       <Header/>
-      <Container className="d-flex justify-content-center align-items-center mt-5" style={{height: 'auto', width: '30vw'}}>
+      <Container className="d-flex justify-content-center align-items-center mt-5 mb-5" style={{height: 'auto', width: '30vw'}}>
         <Row style={{ width: '30vw'}}>
           <Col className={"d-flex justify-content-center flex-column  rounded p-5 bg-success"} style={{ height: "auto" }}>
             <h1 className="mb-3 ">Login</h1>
@@ -81,7 +82,7 @@ const Login = () => {
               )}
         </Row>
       </Container>
-
+      <Footer/>
     </div>
   )
 }

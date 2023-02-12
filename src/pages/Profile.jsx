@@ -5,7 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Goods from './Goods';
 import Price from './Price';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Account from '../components/Account';
 
 const Profile = () => {
@@ -14,9 +15,9 @@ const Profile = () => {
   return (
     <div>
         <Header/>
-        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-    <Row >
-        <Col sm={3} className="bg-dark" style={{height: "85vh", width: "25vw"}}>
+        <Tab.Container id="left-tabs-example" defaultActiveKey="first" >
+    <Row className="mb-5">
+        <Col sm={3} className="bg-dark" style={{height: "95vh", width: "25vw"}}>
         <Nav variant="pills" className="flex-column mt-5">
             <Nav.Item>
               <Nav.Link eventKey="first">Account</Nav.Link>
@@ -68,6 +69,7 @@ const Profile = () => {
         </Col>
       </Row>
     </Tab.Container>
+    <Footer/>
     </div>
   )
 }

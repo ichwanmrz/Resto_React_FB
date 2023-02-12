@@ -29,17 +29,16 @@ const Header = () => {
             </NavDropdown>
             <NavDropdown title="Price" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/price">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-            {/* <Nav.Link as={Link} to="/profile">Profile</Nav.Link> */}
           </Nav>
           <Nav>
           {!user && <Nav.Link as={Link} to="/login">Enter</Nav.Link>}
-          {!user && <Nav.Link as={Link} to="/profile" className="bg-primary rounded text-light px-3">
+          {!user && <Nav.Link as={Link} to="/dashboard" className="bg-primary rounded text-light px-3">
             Create Free Menu</Nav.Link>}
             {user && (
               <div className="d-flex">

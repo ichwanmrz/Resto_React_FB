@@ -5,6 +5,7 @@ import {collection, getFirestore} from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { getAuth } from 'firebase/auth';
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import {Container, Row, Col, Card, CardGroup, Image } from 'react-bootstrap';
 
 const Home = () => {
@@ -23,7 +24,7 @@ const Home = () => {
   return (
       <div>
       <Header/>
-      <Container className=" text-dark w-75 h-25 mt-5"> 
+      <Container className=" text-dark w-75 h-25 mt-5 mb-5"> 
       <Row  >
       <h1 className="text-center mb-3">Restoran List's</h1>
       <Col xs={12}> 
@@ -39,7 +40,6 @@ const Home = () => {
           <Card.Body key={variant}>
             <><Card.Title ><h2 className="text-center mb-3"><u>{doc.data().cafe}</u></h2></Card.Title>
             <h5>Owner : {doc.data().username}</h5>
-            <h6>Pass : {doc.data().password}</h6>
             <h6>Alamat : {doc.data().address}</h6>
             <h6>Kategori : {doc.data().category}</h6>
             <Card.Text>" {doc.data().description} "</Card.Text></>
@@ -98,7 +98,7 @@ const Home = () => {
       </CardGroup> */}
    
       </Container>
-
+      <Footer/>
       </div>
   );
 }

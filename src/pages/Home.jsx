@@ -1,32 +1,36 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Header from "./components/Header";
+import Header from "../components/Header";
 import Image from 'react-bootstrap/Image';
-import cafe1 from "./images/laxbw-prime-1715-hor-wide.webp";
-import cafe2 from "./images/maras-restaurant-interior-1.jpg";
-import cafe3 from "./images/2021_03_23_Merois_008.12.jpg";
-import logo1 from "./images/linkedin_social_media_professional_icon_232022.png";
-import logo2 from "./images/wordpress_icon_231959.png" ;
-import logo3 from "./images/apple_icon_232008.png";
+import cafe1 from "../images/laxbw-prime-1715-hor-wide.webp";
+import cafe2 from "../images/maras-restaurant-interior-1.jpg";
+import cafe3 from "../images/2021_03_23_Merois_008.12.jpg";
+import logo1 from "../images/linkedin_social_media_professional_icon_232022.png";
+import logo2 from "../images/wordpress_icon_231959.png" ;
+import logo3 from "../images/apple_icon_232008.png";
 import { Col, Row, Card, CardGroup, Button } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 
-function App() {
+function Home() {
 
   return (
     <div className="App ">
-    {/* <Header/>
-    <div id="content1" className="float-start text-dark text-start">
-      <Image src={cafe1} className="float-end w-50 m-5 rounded" />
-      <h1 className="m-5 w-50 " style={{fontSize: "350%"}}>
-        Digital menu <br/> solutions in the <br/><u>delivery</u> and<br/><u>inside the store</u></h1>
+    <Header/>
+    <Row id="content1" className="text-dark text-start">
+      <Col>
+      <h1 className="m-5 w-75" style={{fontSize:"300%"}} >
+        Digital menu solutions in the <u>delivery</u> and <u>inside the store</u></h1>
       <p className="m-5 ">
         Have your own delivery channel, free of marketplaces fees. <br/>
         And automate 100% your orders with a solution integrated with the best POS.
       </p>
-    </div>
+      </Col>
+      <Col> 
+      <Image src={cafe1} className="float-end w-100 m-5 rounded" />
+      </Col>
+    </Row>
     <div id="content2" className="text-dark  text-start m-5">
       <Row>
         <Col xs={12} className="w-25 mt-5">
@@ -159,9 +163,12 @@ function App() {
       </Carousel.Item>
     </Carousel>
     </div>
-    <Footer/> */}
+    <div id="footer">
+    <Footer/>
+    </div>
+   
     </div>
   );
 }
 
-export default App;
+export default Home;

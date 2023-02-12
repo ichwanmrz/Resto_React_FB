@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { getAuth, signOut } from "firebase/auth";
 import firebaseApp from "../config/firebaseConfig";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Form, Button, Row, Col, Spinner, Container, Alert } from 'react-bootstrap'
 import { useNavigate, Link } from "react-router-dom";
 
@@ -41,7 +42,7 @@ const Register = () => {
   return (
     <div>
       <Header/>
-      <Container className="d-flex justify-content-center align-items-center mt-4" style={{height: 'auto', width: '30vw'}}>
+      <Container className="d-flex justify-content-center align-items-center mt-4 mb-5" style={{height: 'auto', width: '30vw'}}>
         <Row style={{ width: '50vw'}}>
           <Col className="d-flex justify-content-center flex-column rounded p-4 bg-success" style={{ height: "auto" }}>
             <h1 className="mb-3">Register</h1>
@@ -89,7 +90,7 @@ const Register = () => {
               )}
         </Row>
       </Container>
-
+      <Footer/>
     </div>
   )
 }
