@@ -44,9 +44,6 @@ const Home = () => {
             <h6>Kategori : {doc.data().category}</h6>
             <Card.Text>" {doc.data().description} "</Card.Text></>
           </Card.Body>
-          {/* <Card.Footer>
-            <small className="text-light">Last updated 3 mins ago</small>
-          </Card.Footer> */}
         </Card>
         ))}
       </CardGroup>
@@ -54,49 +51,6 @@ const Home = () => {
        </>
       </Col>
       </Row>
-      
-      {/* <CardGroup>
-      <Card>
-          <Card.Img variant="top" src={cafe1} />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in
-              to additional content.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={cafe2} />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This card has supporting text below as a natural lead-in to
-              additional content.{' '}
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={cafe3} />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in
-              to additional content. 
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-      </CardGroup> */}
-   
       </Container>
       <Footer/>
       </div>

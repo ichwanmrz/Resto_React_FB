@@ -24,13 +24,12 @@ root.render(
     <Routes>
       {/* <Route path="/" element={<App/>}/> */}
       <Route path="/" element={<Home/>}/>
-      {/* <Route path="/profile" element={<Profile/>} /> */}
-      {/* <Route element={<Auth />}> */}
+      <Route element={<Auth />}>
       <Route path="/profile" element={<Profile/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/goods" element={<Goods/>} />
       <Route path="/price" element={<Price/>} />
-      {/* </Route> */}
+      </Route>
       <Route path="/about" element={<About/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
