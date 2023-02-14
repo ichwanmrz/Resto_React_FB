@@ -9,9 +9,9 @@ import cafe3 from "../images/2021_03_23_Merois_008.12.jpg";
 import logo1 from "../images/linkedin_social_media_professional_icon_232022.png";
 import logo2 from "../images/wordpress_icon_231959.png" ;
 import logo3 from "../images/apple_icon_232008.png";
-import { Col, Row, Card, CardGroup, Button } from "react-bootstrap";
-import Carousel from 'react-bootstrap/Carousel';
+import { Col, Row, Card, CardGroup, Button, Carousel } from "react-bootstrap";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -26,6 +26,7 @@ function Home() {
         Have your own delivery channel, free of marketplaces fees. <br/>
         And automate 100% your orders with a solution integrated with the best POS.
       </p>
+      <Button as={Link} to="/dashboard" className="btn btn-primary ms-5 ">Create Your Resto</Button>
       </Col>
       <Col> 
       <Image src={cafe1} className="float-end w-100 m-5 rounded" />
@@ -58,7 +59,6 @@ function Home() {
             <input type="checkbox" checked /> 
               Your own sales channel, free of marketplaces</li><br/>
           </ul>
-          <button className="btn btn-primary">Create Free Menu</button>
         </Col>
         <Col xs={12} className="w-50">
           <Image src={cafe2} className="w-100 rounded me-5"></Image>

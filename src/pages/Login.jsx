@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Form, Button, Row, Col, Alert, Container } from 'react-bootstrap'
 import { useNavigate, Link } from "react-router-dom";
-import { GoogleButton } from "react-google-button";
+// import { GoogleButton } from "react-google-button";
 
 const Login = () => {
   const auth = getAuth(firebaseApp);
@@ -74,7 +74,7 @@ const Login = () => {
               </div>
               {/* <GoogleButton  className="justify-content-start mb-3 rounded" onClick={() => signInWithGoogle()}/> */}
               <span className="d-flex justify-content-start align-items-center">Belum punya akun ? &nbsp;
-              <Link as={Link} to="/register"><a className="text-decoration-none text-light">Register here</a></Link></span>
+              <Link as={Link} to="/register"><a className=" text-light">Register here</a></Link></span>
             </Form>
           </Col>
           {error && (

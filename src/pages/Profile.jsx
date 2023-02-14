@@ -17,7 +17,7 @@ const Profile = () => {
         <Header/>
         <Tab.Container id="left-tabs-example" defaultActiveKey="first" >
     <Row className="mb-5">
-        <Col sm={3} className="bg-dark" style={{height: "95vh", width: "25vw"}}>
+        <Col sm={3} className="bg-dark" style={{height: "120vh", width: "25vw"}}>
         <Nav variant="pills" className="flex-column mt-5">
             <Nav.Item>
               <Nav.Link eventKey="first">Account</Nav.Link>
