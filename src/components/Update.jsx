@@ -29,7 +29,7 @@ const Update = (item) => {
     description: item.item.description,
     image: item.item.image,
     product: item.item.product,
-    
+    price: item.item.price
   });
 
   useEffect(() => {
@@ -106,6 +106,15 @@ const Update = (item) => {
                 className='bg-secondary'
                 onChange={(e) => setResto({ ...resto, product: e.target.value })}
                 defaultValue={resto.product}/>
+            </Col>
+
+            <Col md={6}>
+                <Form.Label>Price :</Form.Label>
+                <Form.Control
+                type="number"
+                className='bg-secondary'
+                onChange={(e) => setResto({ ...resto, price: e.target.value })}
+                defaultValue={resto.price}/>
             </Col>
 
               <Col md={12}>

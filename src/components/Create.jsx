@@ -17,7 +17,8 @@ const Create = () => {
         category:'',
         description: '',
         image: '',
-        product:''
+        product:'',
+        price: 0
     })
 
     const createResto = async () => {
@@ -83,12 +84,18 @@ const Create = () => {
                                     onChange={(e) => setResto({ ...resto, image: e.target.value})} value={resto.image} />
                                 </Col>
 
-
                             <Col md={6}>
                                 <Form.Label>Resto Product</Form.Label>
                                 <Form.Control type="text" className='bg-secondary'
                                 onKeyDown={(e) => e.key === 'Enter' && createResto() && setResto({...resto})}
                                     onChange={(e) => setResto({ ...resto, product: e.target.value})} value={resto.product} />
+                            </Col>
+
+                            <Col md={6}>
+                                <Form.Label>Product Price</Form.Label>
+                                <Form.Control type="number" className='bg-secondary'
+                                onKeyDown={(e) => e.key === 'Enter' && createResto() && setResto({...resto})}
+                                    onChange={(e) => setResto({ ...resto, price: e.target.value})} value={resto.price} />
                             </Col>
 
                             <Col md={12}>

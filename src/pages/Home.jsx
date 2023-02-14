@@ -2,16 +2,15 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Header from "../components/Header";
-import Image from 'react-bootstrap/Image';
+import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+import { Col, Row, Card, CardGroup, Button, Carousel, Image } from "react-bootstrap";
 import cafe1 from "../images/laxbw-prime-1715-hor-wide.webp";
 import cafe2 from "../images/maras-restaurant-interior-1.jpg";
 import cafe3 from "../images/2021_03_23_Merois_008.12.jpg";
 import logo1 from "../images/linkedin_social_media_professional_icon_232022.png";
 import logo2 from "../images/wordpress_icon_231959.png" ;
 import logo3 from "../images/apple_icon_232008.png";
-import { Col, Row, Card, CardGroup, Button, Carousel } from "react-bootstrap";
-import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -36,11 +35,11 @@ function Home() {
       <Row>
         <Col xs={12} className="w-25 mt-5">
           <h4 className="mt-3">Pro your Delivery</h4>
-          <a href="#">Digital Menu for Delivery</a>
+          <a href="/#">Digital Menu for Delivery</a>
           <h4 className="mt-5">Into Your Store</h4>
-          <a className="text-dark" href="#">Digital Menu in QR Code</a><br/><br/>
-          <a className="text-dark" href="#">Digital Menu on Tablet</a><br/><br/>
-          <a className="text-dark" href="#">Digital Menu for Self-Service</a><br/><br/>
+          <a className="text-dark" href="/#">Digital Menu in QR Code</a><br/><br/>
+          <a className="text-dark" href="/#">Digital Menu on Tablet</a><br/><br/>
+          <a className="text-dark" href="/#">Digital Menu for Self-Service</a><br/><br/>
         </Col>
         <Col xs={12} className="w-25">
           <h2>Digital Menu for Delivery</h2>
@@ -112,31 +111,27 @@ function Home() {
     </div>
     <div id="content4" className="text-dark text-center m-5">
       <h2>To all kind bussiness</h2>
-      <p>Goomer is ideal for restaurants of all segments</p>
+      <p>RestoID is ideal for restaurants of all segments</p>
       <div className="d-flex justify-content-center gap-3 text-decoration-none">
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
             Food and baverage</a>
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
             Bread and Snack</a>
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
             Cafe and kuliner </a>
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
-            Hot and freh drink</a>
-            <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
-            Hot and freh drink</a>
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+            Hot and fresh drink</a>
       </div>
       <br/>
       <div className="d-flex justify-content-center gap-3 text-decoration-none">
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
             Food and baverage</a>
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
             Bread and Snack</a>
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
             Cafe and kuliner </a>
-          <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
-            Hot and freh drink</a>
-            <a href="#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
-            Hot and freh drink</a>
+          <a href="/#" className="bg-primary bg-opacity-10 px-4 py-2 rounded text-decoration-none">
+            Hot and fresh drink</a>
       </div>
       
       <Carousel className="mt-5 ">

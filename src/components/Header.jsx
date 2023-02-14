@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { getAuth, signOut } from 'firebase/auth';
 import firebaseApp from '../config/firebaseConfig';
 import { Link } from "react-router-dom";
-import { Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const Header = () => {
   const auth = getAuth(firebaseApp)
@@ -20,14 +20,12 @@ const Header = () => {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <NavDropdown title="Goods" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/goods">Action</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/dashboard">Dashboard</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Price" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/price">Action</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>

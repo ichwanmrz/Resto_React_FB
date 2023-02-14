@@ -43,32 +43,25 @@ const Dashboard = () => {
         </div>
       <h1 className="text-center mb-5">Restoran List's</h1>
       <Col xs={12}> 
-      {/* <>
-      {['Success','Primary'].map((variant) => ( */}
       <CardGroup className="gap-lg-3"> {value && value.docs.map((doc) => (
         <Card key={doc.id} 
-        // bg={variant.toLowerCase()}
-        // text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
         style={{ width: '18rem' }}
         className=" mb-2 flex-fill bg-info">
           <Image src={doc.data().image} alt="image" className="img-thumbnail w-75 m-auto mt-3"/>
           <Card.Body >
-            <>
             <Card.Title ><h2 className="text-center mb-3"><u>{doc.data().cafe}</u></h2></Card.Title>
-            <h5>Owner : {doc.data().username}</h5>
-            <h6>Alamat : {doc.data().address}</h6>
-            <h6>Kategori : {doc.data().category}</h6>
-            <h6>Product : {doc.data().product}</h6>
-            <Card.Text>" {doc.data().description} "</Card.Text> </>
+            <h5>Directur : Mr. {doc.data().username}</h5>
+            <h6>Address : {doc.data().address}</h6>
+            <h6>Category : {doc.data().category}</h6>
+            <h6>Top Product : <u>{doc.data().product}</u></h6>
+            <Card.Text>" {doc.data().description} "</Card.Text> 
           </Card.Body>
           <div className="d-flex mx-auto gap-3 m-3">
           <Update item={doc.data()} itemId={doc.id}/>
           <DeleteHandler doc={doc} />
           </div>
-         
         </Card>
         ))}
-        
       </CardGroup>
        {/* ))} */}
        {/* </> */}

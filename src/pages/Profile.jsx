@@ -3,8 +3,6 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-import Goods from './Goods';
-import Price from './Price';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Account from '../components/Account';
@@ -48,22 +46,22 @@ const Profile = () => {
               <Account />
             </Tab.Pane>
             <Tab.Pane eventKey="second">
-              <Price />
+         
             </Tab.Pane>
             <Tab.Pane eventKey="third">
-              <Goods />
+           
             </Tab.Pane>
             <Tab.Pane eventKey="fourth">
-              <Price />
+           
             </Tab.Pane>
             <Tab.Pane eventKey="fiveth">
-              <Price />
+            
             </Tab.Pane>
             <Tab.Pane eventKey="sixth">
-              <Price />
+           
             </Tab.Pane>
             <Tab.Pane eventKey="sevent">
-              <Price />
+           
             </Tab.Pane>
           </Tab.Content>
         </Col>
