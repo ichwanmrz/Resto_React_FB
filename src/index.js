@@ -14,7 +14,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Auth from './components/Auth';
 import Home from './pages/Home';
-
+import Detail from './components/Detail';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,6 +29,7 @@ root.render(
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/goods" element={<Goods/>} />
       <Route path="/price" element={<Price/>} />
+      <Route path="/detail/:id" element={<Detail/>} />
       </Route>
       <Route path="/about" element={<About/>} />
       <Route path="/login" element={<Login/>} />

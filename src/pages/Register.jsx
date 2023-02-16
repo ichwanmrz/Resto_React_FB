@@ -25,12 +25,11 @@ const Register = () => {
       password: ''
   })
 
-
   const [profile, setProfile] = useState({
       username: "",
       email: "",
       password: "",
-      address:"",
+      // address:"",
   })
 
   const [
@@ -51,16 +50,7 @@ const Register = () => {
           createProfile().then(() => {
           navigate('/login', { replace: true });
       })
-          
   }, [user, navigate, profile, error])
-
-  //cekkk
-
-  // useEffect(() => {
-  //     if(user !== undefined)
-  //     navigate.push('/login', { replace: true });
-  //       signOut(auth)
-  // }, [user, auth, navigate]);
 
   const registerHandler =  async () => {
     await createUserWithEmailAndPassword(
@@ -74,62 +64,41 @@ const Register = () => {
       <Header/>
       <Container className="d-flex justify-content-center align-items-center mt-4 mb-5" style={{height: 'auto', width: '30vw'}}>
         <Row style={{ width: '50vw'}}>
-          <Col className="d-flex justify-content-center flex-column rounded p-4 bg-success" style={{ height: "auto" }}>
-            <h1 className="mb-3">Register</h1>
+          <Col className="d-flex justify-content-center flex-column rounded p-4 bg-success" >
+            <h1 className="mb-3 text-center">Register</h1>
 
-            <Form>
+            <Form className="">
               <Form.Group className="mb-3 fs-5" >
-                <Form.Label>Username</Form.Label>
+                <Form.Label >Username</Form.Label>
                 <Form.Control type="username" placeholder="Enter username"
-                  // onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-                  // onKeyDown={(e) => e.key === "Enter" && registerHandler()}
-                  // value={credentials.username}
-                  onChange={(e) => setProfile({...profile, username: e.target.value})} value={profile.username}
-                  />
+                  onChange={(e) => setProfile({...profile, username: e.target.value})} value={profile.username}/>
               </Form.Group>
 
               <Form.Group className="mb-3 fs-5">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" placeholder="Enter email address"
-                  // onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
-                  // onKeyDown={(e) => e.key === "Enter" && registerHandler()}
-                  // value={credentials.email}
-                  onChange={(e) => setCredentials({...credentials, email: e.target.value})}  value={credentials.email}
-                  // onChange={(e) => setProfile({...profile, email: e.target.value})} value={profile.email}
-                  />
+                  onChange={(e) => setCredentials({...credentials, email: e.target.value})}  value={credentials.email}/>
               </Form.Group>
 
               <Form.Group className="mb-3 fs-5">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password"
-                  // onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                  // onKeyDown={(e) => e.key === "Enter" && registerHandler()}
-                  // value={credentials.password}
-                  onChange={(e) => setCredentials({...credentials, password: e.target.value})} value={credentials.password}
-                  // onChange={(e) => setProfile({...profile, password: e.target.value})} value={profile.password}
-                  />
+                  onChange={(e) => setCredentials({...credentials, password: e.target.value})} value={credentials.password}/>
               </Form.Group>
-
+{/* 
               <Form.Group className="mb-3 fs-5">
                 <Form.Label>Address</Form.Label>
                 <Form.Control type="text" placeholder="Address"
-                  // onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                  // onKeyDown={(e) => e.key === "Enter" && registerHandler()}
-                  // value={credentials.password}
-                  onChange={(e) => setProfile({...profile, address: e.target.value})} value={profile.address}
-                  />
-              </Form.Group>
-
+                  onChange={(e) => setProfile({...profile, address: e.target.value})} value={profile.address}/>
+              </Form.Group> */}
+            
               <div className="d-flex justify-content-end mb-3">
                 <Button disabled={loading} className="" variant="primary" type="submit" onClick={registerHandler}>
-                  {/* {loading && 
-                  (<Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>)
-                  } */}
                   {loading ? "Loading..." : "Register"}
                 </Button>
               </div>
-              <span className="d-flex justify-content-start align-items-center">Sudah punya akun ? &nbsp;
-              <Link as={Link} to="/login"><a className="text-light">Login here</a></Link>
+              <span className="d-flex justify-content-start align-items-center">Have account ? &nbsp;
+              <Link as={Link} to="/login" className="text-light">Login here</Link>
               </span>
             </Form>
           </Col>

@@ -18,7 +18,7 @@ function Home() {
     <div className="App ">
     <Header/>
     <Row id="content1" className="text-dark text-start">
-      <Col>
+      <Col className="d-inline-flex d-lg-inline">
       <h1 className="m-5 w-75" style={{fontSize:"300%"}} >
         Digital menu solutions in the <u>delivery</u> and <u>inside the store</u></h1>
       <p className="m-5 ">
@@ -32,16 +32,16 @@ function Home() {
       </Col>
     </Row>
     <div id="content2" className="text-dark  text-start m-5">
-      <Row>
-        <Col xs={12} className="w-25 mt-5">
-          <h4 className="mt-3">Pro your Delivery</h4>
+      <Row className="text-dark text-start">
+        <Col lg={3} className="d-sm-flex d-lg-inline">
+          <h4>Pro your Delivery</h4>
           <a href="/#">Digital Menu for Delivery</a>
           <h4 className="mt-5">Into Your Store</h4>
           <a className="text-dark" href="/#">Digital Menu in QR Code</a><br/><br/>
           <a className="text-dark" href="/#">Digital Menu on Tablet</a><br/><br/>
           <a className="text-dark" href="/#">Digital Menu for Self-Service</a><br/><br/>
         </Col>
-        <Col xs={12} className="w-25">
+        <Col lg={3} className="d-sm-flex d-lg-inline">
           <h2>Digital Menu for Delivery</h2>
           <p>Have your own delivery channel, free of marketplaces fees.</p>
           <ul className="list-group">
@@ -59,7 +59,7 @@ function Home() {
               Your own sales channel, free of marketplaces</li><br/>
           </ul>
         </Col>
-        <Col xs={12} className="w-50">
+        <Col lg={6} className=" d-sm-flex d-lg-inline">
           <Image src={cafe2} className="w-100 rounded me-5"></Image>
         </Col>
       </Row>

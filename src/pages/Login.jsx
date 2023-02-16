@@ -44,9 +44,9 @@ const Login = () => {
     <div>
       <Header/>
       <Container className="d-flex justify-content-center align-items-center mt-5 mb-5" style={{height: 'auto', width: '30vw'}}>
-        <Row style={{ width: '30vw'}}>
+        <Row style={{ width: '50vw'}}>
           <Col className={"d-flex justify-content-center flex-column  rounded p-5 bg-success"} style={{ height: "auto" }}>
-            <h1 className="mb-3 ">Login</h1>
+            <h1 className="mb-3 text-center">Login</h1>
 
             <Form>
               <Form.Group className="mb-3 fs-5" controlId="formBasicEmail">
@@ -73,8 +73,8 @@ const Login = () => {
                   Sign in with Google</Button>
               </div>
               {/* <GoogleButton  className="justify-content-start mb-3 rounded" onClick={() => signInWithGoogle()}/> */}
-              <span className="d-flex justify-content-start align-items-center">Belum punya akun ? &nbsp;
-              <Link as={Link} to="/register"><a className=" text-light">Register here</a></Link></span>
+              <span className="d-flex justify-content-center align-items-center">Don't have account ? &nbsp;
+              <Link as={Link} to="/register"  className=" text-light">Register here</Link></span>
             </Form>
           </Col>
           {error && (

@@ -5,7 +5,6 @@ import { Col, Form, Row } from "react-bootstrap";
 import { updateDoc, doc, onSnapshot } from "firebase/firestore";
 import firebaseApp from "../config/firebaseConfig";
 import { getFirestore } from "firebase/firestore";
-// import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,6 +22,7 @@ const Update = (item) => {
   const db = getFirestore(firebaseApp);
 
   const [resto, setResto] = useState({
+    username: item.item.username,
     cafe: item.item.cafe,
     address: item.item.address,
     category: item.item.category,
@@ -64,7 +64,16 @@ const Update = (item) => {
           <Form>
             <Row className="g-3">
             <Col md={6}>
-                <Form.Label>Name :</Form.Label>
+                <Form.Label>Owner :</Form.Label>
+                <Form.Control
+                type="text"
+                className='bg-secondary'
+                onChange={(e) => setResto({ ...resto, username: e.target.value })}
+                defaultValue={resto.username}/>
+            </Col>
+
+            <Col md={6}>
+                <Form.Label>Resto Name :</Form.Label>
                 <Form.Control
                 type="text"
                 className='bg-secondary'
@@ -73,7 +82,7 @@ const Update = (item) => {
             </Col>
 
             <Col md={6}>
-                <Form.Label>Address :</Form.Label>
+                <Form.Label>Resto Address :</Form.Label>
                 <Form.Control
                 type="text"
                 className='bg-secondary'
@@ -82,7 +91,7 @@ const Update = (item) => {
               </Col>
 
             <Col md={6}>
-                <Form.Label>Category :</Form.Label>
+                <Form.Label>Resto Category :</Form.Label>
                 <Form.Control
                 type="text"
                 className='bg-secondary'
@@ -90,8 +99,8 @@ const Update = (item) => {
                 defaultValue={resto.category}/>
             </Col>
 
-            <Col md={6}>
-                <Form.Label>Image Url :</Form.Label>
+            <Col md={12}>
+                <Form.Label>Resto Image (Url) :</Form.Label>
                 <Form.Control
                 type="text"
                 className='bg-secondary'
@@ -100,7 +109,7 @@ const Update = (item) => {
             </Col>
 
             <Col md={6}>
-                <Form.Label>Product :</Form.Label>
+                <Form.Label>Resto Product :</Form.Label>
                 <Form.Control
                 type="text"
                 className='bg-secondary'
@@ -109,7 +118,7 @@ const Update = (item) => {
             </Col>
 
             <Col md={6}>
-                <Form.Label>Price :</Form.Label>
+                <Form.Label>Product Price :</Form.Label>
                 <Form.Control
                 type="number"
                 className='bg-secondary'
@@ -118,7 +127,7 @@ const Update = (item) => {
             </Col>
 
               <Col md={12}>
-                <Form.Label>Description :</Form.Label>
+                <Form.Label>Resto Description :</Form.Label>
                 <Form.Control
                 as="textarea"
                 className='bg-secondary'

@@ -12,6 +12,7 @@ const Create = () => {
     const [isUploading] = useState(false)
 
     const [resto, setResto] = useState({
+        username: '',
         cafe: '',
         address: '',
         category:'',
@@ -45,7 +46,7 @@ const Create = () => {
   return (
     <div>
         <Button variant="primary" onClick={handleShow}>
-            Create Resto
+            Create Your Resto
         </Button>
         
         <Modal show={show} className="text-dark ">
@@ -56,6 +57,13 @@ const Create = () => {
                 <Row className='justify-content-center'>
                     <Form>
                         <Row className='g-3'>
+                        <Col md={6}>
+                                <Form.Label>Owner</Form.Label>
+                                <Form.Control type="text" className='bg-secondary'
+                                onKeyDown={(e) => e.key === 'Enter' && createResto() && setResto({...resto})}
+                                    onChange={(e) => setResto({ ...resto, username: e.target.value})} value={resto.username} />
+                            </Col>
+
                             <Col md={6}>
                                 <Form.Label>Resto Name</Form.Label>
                                 <Form.Control type="text" className='bg-secondary'
@@ -77,8 +85,8 @@ const Create = () => {
                                     onChange={(e) => setResto({ ...resto, category: e.target.value})} value={resto.category} />
                             </Col>
 
-                            <Col md={6}>
-                                <Form.Label>Resto Image Url</Form.Label>
+                            <Col md={12}>
+                                <Form.Label>Resto Image (Url)</Form.Label>
                                 <Form.Control type="text" className='bg-secondary'
                                     onKeyDown={(e) => e.key === 'Enter' && createResto() && setResto({...resto})}
                                     onChange={(e) => setResto({ ...resto, image: e.target.value})} value={resto.image} />

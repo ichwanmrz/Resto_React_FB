@@ -35,7 +35,7 @@ const Footer = () => {
                 <div className="row d-flex justify-content-center">
                   <div className="col-auto">
                     <p className="pt-2">
-                      <strong>Sign up for our newsletter</strong>
+                      <strong>Sign up for newsletter</strong>
                     </p>
                   </div>
 
