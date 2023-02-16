@@ -15,7 +15,7 @@ import Register from './pages/Register';
 import Auth from './components/Auth';
 import Home from './pages/Home';
 import Detail from './components/Detail';
-
+import Create from './components/Create';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,13 +24,14 @@ root.render(
     <Routes>
       {/* <Route path="/" element={<App/>}/> */}
       <Route path="/" element={<Home/>}/>
-      <Route element={<Auth />}>
+      {/* <Route element={<Auth />}> */}
       <Route path="/profile" element={<Profile/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/goods" element={<Goods/>} />
       <Route path="/price" element={<Price/>} />
+      <Route path="/create" element={<Create/>} />
       <Route path="/detail/:id" element={<Detail/>} />
-      </Route>
+      {/* </Route> */}
       <Route path="/about" element={<About/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} />

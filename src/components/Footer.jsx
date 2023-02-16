@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 const Footer = () => {
   return (
     <div>
-        <footer className="bg-dark text-center text-white">
+        <footer className="bg-dark text-center text-white mt-5">
           <div className="container p-4 ">
 
             {/* <!-- Section: Social media --> */}

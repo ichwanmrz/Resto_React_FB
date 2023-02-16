@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import { Col, Row, Form } from 'react-bootstrap'
 import { Modal, Button } from 'react-bootstrap'
 import firebaseApp from '../config/firebaseConfig'
-import { doc, setDoc, collection, getFirestore } from 'firebase/firestore'
+import { doc, setDoc, collection, getFirestore } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const Create = () => {
     const [show, setShow] = useState(false)
@@ -10,7 +11,8 @@ const Create = () => {
     const handleShow = () => setShow(true)
     const [loading, setLoading] = useState(false)
     const [isUploading] = useState(false)
-
+    const navigate = useNavigate();
+    
     const [resto, setResto] = useState({
         username: '',
         cafe: '',
@@ -42,6 +44,14 @@ const Create = () => {
         handleClose(false)
     }
     
+    
+    const DetailHandler = ({ doc }) => {
+        return (
+          <Button onClick={() => navigate(`/detail/${doc.id}`)} variant="outline-dark">
+           View
+          </Button>
+        );
+      };
 
   return (
     <div>
@@ -129,7 +139,6 @@ const Create = () => {
                 </Button>
             </Modal.Footer>
         </Modal>
-
     </div>
   )
 }

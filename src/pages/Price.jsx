@@ -5,6 +5,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Table } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 const Price = () => {
   
@@ -46,6 +47,8 @@ const Price = () => {
         </tbody>
           ))}
       </Table>
+      <Link to='/dashboard'className='m-3'>Back to the Resto List</Link>
+      <Link to='/profile'className='me-3 float-end'>Go to order menu</Link>
         <Footer/>
     </div>
   )

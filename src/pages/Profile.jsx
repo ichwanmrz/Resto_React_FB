@@ -9,7 +9,6 @@ import Account from '../components/Account';
 
 const Profile = () => {
 
-
   return (
     <div>
         <Header/>

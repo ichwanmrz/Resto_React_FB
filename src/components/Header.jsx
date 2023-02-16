@@ -19,16 +19,14 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <NavDropdown title="Goods" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/goods">Action</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/dashboard">Resto Lists</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">Another Link</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Price" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/price">Action</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/price">Price List</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
           </Nav>
@@ -38,12 +36,12 @@ const Header = () => {
             Create Account</Nav.Link>}
             {user && (
               <div className="d-flex">
-              <Nav.Link as={Link} to="/profile" className='text-primary' data-bs-toggle="tooltip" data-bs-placement="bottom" title="View my profile">
+              <Nav.Link as={Link} to="/profile" className='text-primary' data-bs-toggle="tooltip" title="View my profile">
                 {/* <p >
                 </p>  */}
                 Halo, {user.displayName || user.email.split('@')[0]} !
               </Nav.Link>
-              <Nav.Link as={Link} to="/" onClick={() => signOut(auth)} data-bs-toggle="tooltip" data-bs-placement="bottom" title="get out from here">
+              <Nav.Link as={Link} to="/" onClick={() => signOut(auth)} data-bs-toggle="tooltip" title="get out from here">
                 Logout
               </Nav.Link>
               </div>

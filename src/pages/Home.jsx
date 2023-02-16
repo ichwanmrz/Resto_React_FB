@@ -18,17 +18,17 @@ function Home() {
     <div className="App ">
     <Header/>
     <Row id="content1" className="text-dark text-start">
-      <Col className="d-inline-flex d-lg-inline">
-      <h1 className="m-5 w-75" style={{fontSize:"300%"}} >
+      <Col lg={5} className="d-sm-flex d-lg-inline">
+      <h1 className=" m-5 w-75" style={{fontSize:"300%"}} >
         Digital menu solutions in the <u>delivery</u> and <u>inside the store</u></h1>
       <p className="m-5 ">
         Have your own delivery channel, free of marketplaces fees. <br/>
         And automate 100% your orders with a solution integrated with the best POS.
       </p>
-      <Button as={Link} to="/dashboard" className="btn btn-primary ms-5 ">Create Your Resto</Button>
+      <Button as={Link} to="/dashboard" className="btn btn-primary ms-5 ">View the Resto List</Button>
       </Col>
-      <Col> 
-      <Image src={cafe1} className="float-end w-100 m-5 rounded" />
+      <Col lg={7}> 
+      <Image src={cafe1} className="float-end w-75 me-5 my-5 rounded d-sm-flex d-lg-inline " />
       </Col>
     </Row>
     <div id="content2" className="text-dark  text-start m-5">
