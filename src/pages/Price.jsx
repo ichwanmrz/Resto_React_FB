@@ -8,7 +8,6 @@ import { Table } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
 const Price = () => {
-  
   const [value] = useCollection(
     collection(getFirestore(firebaseApp), 'Resto'),
     {
@@ -48,7 +47,7 @@ const Price = () => {
           ))}
       </Table>
       <Link to='/dashboard'className='m-3'>Back to the Resto List</Link>
-      <Link to='/profile'className='me-3 float-end'>Go to order menu</Link>
+      <Link to='/order'className='me-3 float-end'>Go to order menu</Link>
         <Footer/>
     </div>
   )
