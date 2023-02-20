@@ -10,7 +10,6 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const Update = (item) => {
   const [show, setShow] = useState(false);
-
   const id = item.itemId;
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
