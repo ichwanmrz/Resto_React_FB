@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import firebaseApp from "../config/firebaseConfig";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Form, Button, Row, Col, Alert, Container } from 'react-bootstrap'
+import { Form, Button, Row, Col, Modal, Alert } from 'react-bootstrap'
 import { useNavigate, Link } from "react-router-dom";
 // import { GoogleButton } from "react-google-button";
 
 const Login = () => {
   const auth = getAuth(firebaseApp);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('')
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const errorDict = {
-    "auth/wrong-password": "Password anda salah!",
-    "auth/internal-error": "Password harus diisi!",
-    "auth/invalid-email": "Email harus diisi!",
-    "auth/user-not-found": "User tidak ditemukan!"
+    "auth/wrong-password": "Wrong password!",
+    "auth/internal-error": "Password required!",
+    "auth/invalid-email": "Email invalid!",
+    "auth/user-not-found": "User not found!"
   };
 
 
@@ -39,51 +43,70 @@ const Login = () => {
     console.log(auth.currentUser);
   };
 
+  const triggerResetEmail = async () => {         
+    console.log(email);         
+    await sendPasswordResetEmail(auth, email )
+    alert("Password Reset Email Sent")
+    // console.log("Password reset email sent");     
+}  
 
   return (
     <div>
       <Header/>
-      <Container className="d-flex justify-content-center align-items-center mt-5 mb-5" style={{height: 'auto', width: '30vw'}}>
-        <Row style={{ width: '50vw'}}>
-          <Col className={"d-flex justify-content-center flex-column  rounded p-5 bg-success"} style={{ height: "auto" }}>
-            <h1 className="mb-3 text-center">Login</h1>
-
+    <Row>
+        <Col xs={12} md={{span: 4, offset: 6}} className="bg-success p-4 rounded mt-3">
+            <h2 className='text-light text-center mb-3'>Login</h2>
             <Form>
-              <Form.Group className="mb-3 fs-5" controlId="formBasicEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email address"
-                  onKeyDown={(e) => e.key === "Enter" && loginHandler()}
-                  onChange={(e) => setCredentials({ ...credentials, email: e.target.value })} 
-                  value={credentials.email}/>
-              </Form.Group>
-              
-              <Form.Group className="mb-3 fs-5" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password"
-                  onKeyDown={(e) => e.key === "Enter" && loginHandler()}
-                  onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                  value={credentials.password}/>
-              </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" placeholder="Enter your email address" 
+                    onKeyDown={(e) => e.key === 'Enter' && loginHandler()} onChange={(e) => setCredentials({...credentials, email: e.target.value})} value={credentials.email} 
+                    />
+                </Form.Group>
 
-              <div className="d-flex justify-content-center ml-2 mt-4 mb-3">
-                <Button disabled={loading} variant="primary" type="button" onClick={loginHandler}>
-                  {loading ? "Loading..." : "Login"}
+                <Form.Group className="mb-4" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Enter your password" 
+                        onKeyDown={(e) => e.key === 'Enter' && loginHandler()} 
+                        onChange={(e) => setCredentials({...credentials, password: e.target.value})} value={credentials.password} 
+                    />
+                    <Button variant="outline-light mt-2 mb-3" onClick={handleShow}>Forgot Password ?</Button>
+                    <Modal show={show} onHide={handleClose} className="text-dark" centered>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Reset Password</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body> 
+                                <p>Enter Your Registered Email :</p>
+                                <Form.Text show={show} onHide={handleClose}>
+                                <input  className="resetEmailInput" placeholder="Email" type="email" value={email} 
+                                onChange={e => setEmail(e.target.value)} required /> 
+                                </Form.Text>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button disabled={loading} onClick={triggerResetEmail}>
+                                {loading ? 'loading...' : 'Send Link to Email'}
+                                </Button>
+                            </Modal.Footer>
+                      </Modal>
+                       <span className="d-flex justify-content-start align-items-center">If you don't have account, &nbsp;
+                      <Link as={Link} to="/register"  className=" text-light">Register here.</Link>
+                      </span>
+                </Form.Group>
+                
+                <Button 
+                disabled={loading} variant="primary" type="submit" onClick={loginHandler}>
+                    {loading ? 'loading...' : 'Login'}
                 </Button>
                 <Button className="mx-2" variant="danger" type="button" onClick={() => signInWithGoogle()}>
                   Sign in with Google</Button>
-              </div>
-              {/* <GoogleButton  className="justify-content-start mb-3 rounded" onClick={() => signInWithGoogle()}/> */}
-              <span className="d-flex justify-content-center align-items-center">Don't have account ? &nbsp;
-              <Link as={Link} to="/register"  className=" text-light">Register here</Link></span>
             </Form>
-          </Col>
-          {error && (
+        </Col>
+        {error && (
                 <Alert variant="danger">{error && errorDict[error.code]}</Alert>
               )}
-        </Row>
-      </Container>
-      <Footer/>
-    </div>
+    </Row>
+    <Footer/>
+</div>
   )
 }
 
